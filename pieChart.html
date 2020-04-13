@@ -1,0 +1,44 @@
+<html>
+
+	<head>
+
+		<title>VISUALIZATION</title> 
+
+		<script src="apexcharts.js"></script>
+
+		<script>
+
+	        var options = {
+
+	          series: [44, 55, 13, 43, 22],
+		          chart: {
+		          width: 580,
+		          type: 'pie',
+	        	},
+
+	        	labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E']
+
+	        };
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div id="chart"></div>
+
+		<script>
+
+			var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+			chart.render();
+
+		</script>
+
+	</body>
+
+
+</head>
+
+
