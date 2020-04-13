@@ -1,0 +1,145 @@
+<html>
+
+	<head>
+
+		<title>VISUALIZATION</title> 
+
+		<style>
+		  
+			#chart {
+
+				max-width: 650px;
+
+			}
+		  
+		</style>
+
+
+		<!-- Link to the charting software. -->
+
+		<script src="apexcharts.js"></script>
+
+
+		<script>
+
+			/*********************************************************
+			*                                                        *
+			* CREATE DATA THAT WILL CONTROL THE CHART OPTIONS OBJECT *                                
+			*                                                        *
+			*********************************************************/
+
+
+			// These data groups will be displayed in the chart. Each group is an array and each must have the same number of values.
+
+			Vanilla = [300,1000,250,100];
+
+			Chocolate = [400,230,350,800];
+
+			Strawberry = [150,1200,200,50];
+
+
+			// This will be the x-axis labels for the chart. The number of labels must match the number of values to be charted.
+
+			xAxisLabels = ['Spring','Summer','Fall','Winter'];
+
+
+			// Specify the chart type & height. There are many possibilities including: line, bar, histogram, scatter, area, heatmap
+
+			chartType = localStorage.type;
+
+			chartHeight = localStorage.height;
+
+			/*********************************************************************
+			*                                                                    *
+			* DEFINE THE CHART OPTIONS OBJECT WHICK DETERMINES WHAT IS DISPLAYED *
+			*                                                                    *
+			*********************************************************************/
+
+			colors = colors,;
+
+				if(chartType == 'heatmap'){
+					colors = ['#FF0000','#FF0000','#FF0000'];
+				}
+
+			var options = {
+				colors = ['#FFFFCC','#663300','FF0000'];
+				
+					
+				chart: {
+					type: chartType,
+					height: chartHeight
+				}
+
+				// Notice series is an array of flavors. Each flavor has 2 name value pair: name and data
+
+				// In this sample the array has three structures: one for Vanilla and one for Chocolate and one for Strawberry. For each additional flavor add another structure to the array.
+
+				series: [{
+					name: 'Vanilla',
+					data: Vanilla
+				},{
+					name: 'Chocolate',
+					data: Chocolate
+				},{
+					name: 'Strawberry',
+					data: Strawberry
+				}],
+
+				colors: colors,
+
+				// These are the labels on the x-axis. There is one label for each data value for each flavor.
+
+				xaxis: {
+					categories: xAxisLabels
+				}
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<!-- This div will display the chart. -->
+		
+		<button onclick='history.go(-1)'> BACK </button>
+		<br><br>
+
+		<div id="chart"></div>
+
+		<script>
+
+			/********************************************************
+			*                                                       *
+			* CREATE THE CHART OBJECT LINKED TO DIV WITH ID "chart" *
+			*                                                       *
+			* NOTICE THE "options" OBJECT CREATED ABOVE IS USED     *
+			*                                                       *
+			********************************************************/
+
+
+			// Create a "chart" object that will be linked to the div with id "chart". Notice that the object "options" (created above) is used when the chart object is created here.
+
+			// This code must be here because it references the div, so it must be after the div is created.
+
+			var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+
+			// Display the chart.
+
+			/****************
+			*               *
+			* DISPLAY CHART *
+			*               *
+			****************/
+
+			chart.render();
+
+		</script>
+
+	</body>
+
+
+</head>
+
+
