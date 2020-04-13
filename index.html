@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function run(){
+		type = document.getElementById('chartType').value;
+		height = document.getElementById('chartHeight').value;
+
+		if(height ==''){
+			height = 500;
+}
+
+		localStorage.type = type;
+		localStorage.height = height;
+
+		location = 'makeChart.html';
+
+}
+
+
+</script>
+</head>
+<body>
+
+    <table>
+
+        <tr><td><h2>CHART TYPE:<td></h2>
+
+<select id="chartType">
+  <option value="line">line</option>
+  <option value="bar">bar</option>
+  <option value="histogram">histogram</option>
+  <option value="scatter">scatter</option>
+  <option value="area">area</option>
+  <option value="heatmap">heatmap</option>
+</select>
+
+        <tr><td><h2>CHART HEIGHT:<td></h2><input id='chartHeight'>
+
+        <tr><td><input type = 'button' value = 'GO' onclick='go()'>
+
+    </table>
+</body>
+</html>
