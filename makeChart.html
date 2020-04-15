@@ -45,9 +45,9 @@
 
 			// Specify the chart type & height. There are many possibilities including: line, bar, histogram, scatter, area, heatmap
 
-			chartType = localStorage.type;
+			chartType = localStorage.chartType;
 
-			chartHeight = localStorage.height;
+			chartHeight = localStorage.chartHeight;
 
 			/*********************************************************************
 			*                                                                    *
@@ -55,20 +55,18 @@
 			*                                                                    *
 			*********************************************************************/
 
-			colors = colors,;
+			colors = ['#FFFFCC','#663300','#FF0000'];
 
 				if(chartType == 'heatmap'){
 					colors = ['#FF0000','#FF0000','#FF0000'];
 				}
 
 			var options = {
-				colors = ['#FFFFCC','#663300','FF0000'];
-				
-					
+						
 				chart: {
 					type: chartType,
 					height: chartHeight
-				}
+				},
 
 				// Notice series is an array of flavors. Each flavor has 2 name value pair: name and data
 
@@ -123,7 +121,7 @@
 			// This code must be here because it references the div, so it must be after the div is created.
 
 			var chart = new ApexCharts(document.querySelector("#chart"), options);
-
+		 
 
 			// Display the chart.
 
