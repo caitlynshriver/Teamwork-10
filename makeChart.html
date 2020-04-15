@@ -134,7 +134,23 @@
 			chart.render();
 
 		</script>
+		
+		<button onclick='myFunction("Vanilla")'>Vanilla</button>	
+		<button onclick='myFunction("Chocolate")'>Chocolate</button>
+		<button onclick='myFunction("Strawberry")'>Strawberry</button>
 
+		<script>
+			function myFunction(flavor){
+				if (flavor == 'Vanilla') localStorage.series = JSON.stringify(Vanilla);
+				if (flavor == 'Chocolate') localStorage.series = JSON.stringify(Chocolate);
+				if (flavor == 'Strawnerry') localStorage.series = JSON.stringify(Strawberry);
+
+				localStorage.xAxisLabels = JSON.stringify(xAxisLabels);
+				localStorage.flavor = flavor;
+				location = "pieChart.html";
+
+			}
+		</script>
 	</body>
 
 

@@ -8,16 +8,21 @@
 
 		<script>
 
+			series = JSON.parse(localStorage.series);
+			labels = JSON.parse(localStorage.xAxisLabels);
+			colors = ['#FFFFCC', '#663300','#FF0000','#0000FF']; 
+
 	        var options = {
 
-	          series: [44, 55, 13, 43, 22],
+	          series: series,
 		          chart: {
 		          width: 580,
 		          type: 'pie',
 	        	},
 
-	        	labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E']
+	        	labels: labels,
 
+				colors: colors, 
 	        };
 
 		</script>
@@ -26,9 +31,17 @@
 
 	<body>
 
+		<button onclick='history.go(-1)'> BACK </button>
+		<button onclick='history.go(-2)'> HOME </button>
+
+		<h1 id='flavor'>flavor</h1>
+
+
 		<div id="chart"></div>
 
 		<script>
+
+			document.getElementById('flavor').innerHTML = localStorage.flavor;
 
 			var chart = new ApexCharts(document.querySelector("#chart"), options);
 
@@ -37,7 +50,6 @@
 		</script>
 
 	</body>
-
 
 </head>
 
