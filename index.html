@@ -2,16 +2,16 @@
 <html>
 <head>
 <script>
-	function run(){
+	function go(){
 		type = document.getElementById('chartType').value;
 		height = document.getElementById('chartHeight').value;
 
 		if(height ==''){
 			height = 500;
 }
-
-		localStorage.type = type;
-		localStorage.height = height;
+    console.log(chartType);
+		localStorage.chartType = type;
+		localStorage.chartHeight = height;
 
 		location = 'makeChart.html';
 
@@ -34,10 +34,9 @@
   <option value="area">area</option>
   <option value="heatmap">heatmap</option>
 </select>
-
         <tr><td><h2>CHART HEIGHT:<td></h2><input id='chartHeight'>
 
-        <tr><td><input type = 'button' value = 'GO' onclick='go()'>
+     <tr><td><button onclick='go()'>GO</button>
 
     </table>
 </body>
